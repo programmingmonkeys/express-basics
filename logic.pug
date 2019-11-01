@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+  head
+    title Logic
+  body
+    header
+      h1 Logic
+    section#content
+      
+      ul
+        each color in colors
+          li= color
+      
+      if hint
+        p
+          i Hint: #{hint}
+      else
+        p
+          i (Nothing to display)
+    
