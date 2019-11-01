@@ -3,6 +3,8 @@ const eyes = require('eyespect')
 
 const app = express()
 
+app.use(express.urlencoded({ extended: false }))
+
 app.set('view engine', 'pug')
 
 app.get('/', (req, res) => res.render('index'))
@@ -20,6 +22,7 @@ app.get('/hello', (req, res) => {
 })
 
 app.post('/hello', (req, res) => {
+  console.log(req.body)
   res.render('hello')
 })
 
