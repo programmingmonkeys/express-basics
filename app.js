@@ -22,8 +22,9 @@ app.get('/hello', (req, res) => {
 })
 
 app.post('/hello', (req, res) => {
-  console.log(req.body)
-  res.render('hello')
+  res.render('hello', {
+    name: req.body.username,
+  })
 })
 
 app.listen(3000, () => console.log('The app is running on port 3000'))
