@@ -1,4 +1,5 @@
 const express = require('express')
+const eyes = require('eyespect')
 
 const app = express()
 
@@ -8,8 +9,13 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
-app.get('/hello', (req, res) => {
-  res.send('<h1>Hello Foobar</h1>')
+app.get('/cards', (req, res) => {
+  eyes.inspect(res.locals, 'res.locals')
+
+  res.render('card', {
+    prompt: `Who is buried in Grant's tomb?`,
+    hint: `Think about whose tomb it is?`,
+  })
 })
 
 app.listen(3000, () => console.log('The app is running on port 3000'))
