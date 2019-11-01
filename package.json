@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/codingChewie/express-basics#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pug": "^2.0.4"
   },
   "devDependencies": {
     "eslint": "^6.4.0",
