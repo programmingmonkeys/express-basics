@@ -45,4 +45,6 @@ router.get('/:foo/:bar', (req, res) => {
   })
 })
 
+router.get('*', (req, res) => res.redirect('/'))
+
 module.exports = router
