@@ -10,8 +10,8 @@ app.use(cookieParser())
 app.set('view engine', 'pug')
 
 app.use((req, res, next) => {
-  req.message = 'message made it'
-  next()
+  const err = new Error('Oh no')
+  next(err)
 })
 
 app.use((req, res, next) => {
