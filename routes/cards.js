@@ -4,18 +4,15 @@ const eyes = require('eyespect')
 const { data } = require('../data/flashcardData.json')
 const { cards } = data
 
-router.get('/', (req, res) => {
-  const numberOfCards = cards.length
-  const flashcardId = Math.floor(Math.random() * numberOfCards)
-
-  res.redirect(`/cards/${flashcardId}`)
-})
+router.get('/', (req, res) => res.redirect(`/cards/${randomizer(cards)}`))
 
 router.get('/:id', (req, res) => {
   eyes.inspect(req.query, 'req.query')
 
   const { side } = req.query
-  const { id } = req.params
+
+  let { id } = req.params
+  if (typeof id !== 'number') id = randomizer(cards)
 
   if (!side) return res.redirect(`/cards/${id}?side=question`)
 
@@ -45,6 +42,9 @@ router.get('/:foo/:bar', (req, res) => {
   })
 })
 
-router.get('*', (req, res) => res.redirect('/'))
-
 module.exports = router
+
+function randomizer(cards) {
+  const numberOfCards = cards.length
+  return Math.floor(Math.random() * numberOfCards)
+}
