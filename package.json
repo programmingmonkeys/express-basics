@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codingChewie/express-basics.git"
+    "url": "git+https://github.com/programmingmonkeys/express-basics.git"
   },
   "keywords": [],
   "author": "codingChewie",
   "bugs": {
-    "url": "https://github.com/codingChewie/express-basics/issues"
+    "url": "https://github.com/programmingmonkeys/express-basics/issues"
   },
-  "homepage": "https://github.com/codingChewie/express-basics#readme",
+  "homepage": "https://github.com/programmingmonkeys/express-basics#readme",
   "dependencies": {
     "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
